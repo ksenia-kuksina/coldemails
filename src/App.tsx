@@ -1,28 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere } from '@react-three/drei';
+
 import ResultPage from './components/ResultPage';
 import LandingPage from './components/LandingPage';
 import HistorySidebar from './components/HistorySidebar';
+import Navbar from './components/Navbar';
+import DarkVeil from './components/DarkVeil';
+
 import { saveEmailToHistory, getEmailHistory } from './utils/emailHistory';
 import { EmailHistoryEntry } from './types/email';
 
-// Enhanced 3D Background Component
-const BackgroundSphere: React.FC = () => {
-  return (
-    <Sphere args={[1, 100, 200]} scale={2.5}>
-      <meshStandardMaterial
-        color="#00F0FF"
-        transparent
-        opacity={0.1}
-        wireframe
-        roughness={0.8}
-        metalness={0.2}
-      />
-    </Sphere>
-  );
-};
+
 
 // AI Prompt Engineering Constants
 const PSYCHOLOGICAL_TRIGGERS = [
@@ -440,25 +428,24 @@ The email must be so compelling that they feel they'll lose money by not respond
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Enhanced 3D Background */}
+      {/* Dark Veil Background */}
       <div className="fixed inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <ambientLight intensity={0.7} />
-          <pointLight position={[10, 10, 10]} intensity={1.5} />
-          <BackgroundSphere />
-          <OrbitControls 
-            enableZoom={false} 
-            enablePan={false} 
-            autoRotate 
-            autoRotateSpeed={0.8}
-            enableDamping
-            dampingFactor={0.05}
-          />
-        </Canvas>
+        <DarkVeil 
+          hueShift={360}
+          noiseIntensity={0.02}
+          scanlineIntensity={0}
+          speed={0.3}
+          scanlineFrequency={0}
+          warpAmount={0.1}
+          resolutionScale={1}
+        />
       </div>
 
+      {/* Navbar */}
+      <Navbar />
+
       {/* Content */}
-      <div className="relative z-10 min-h-screen container mx-auto px-4">
+      <div className="relative z-10 min-h-screen w-full px-4 pt-20 lg:pt-24">
         <AnimatePresence mode="wait">
           {currentPage === 'landing' ? (
             <motion.div
