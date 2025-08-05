@@ -78,20 +78,20 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
         >
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-4 py-2 glass-panel rounded-xl hover:bg-glass-medium transition-colors neon-glow"
+            className="flex items-center gap-2 px-4 py-2 glass-panel rounded-xl hover:bg-glass-medium transition-colors neon-glow button-hover glare-hover"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Generate Another</span>
           </button>
 
           <div className="flex items-center gap-2 px-4 py-2 glass-panel rounded-full">
-            <Sparkles className="w-5 h-5 text-neon-blue" />
+            <Sparkles className="w-5 h-5 text-purple-500" />
             <span className="text-sm font-medium">Email Generated</span>
           </div>
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-5xl font-space font-bold text-center mb-4 gradient-text"
+          className="text-4xl md:text-5xl font-space font-bold text-center mb-4 text-white"
           variants={itemVariants}
         >
           Your Cold Email is Ready
@@ -118,13 +118,13 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
         >
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <Mail className="w-6 h-6 text-neon-blue" />
+              <Mail className="w-6 h-6 text-purple-500" />
               <h2 className="text-xl font-semibold">Generated Email</h2>
             </div>
             
             <button
               onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2 bg-glass-dark border border-glass-medium rounded-xl hover:border-neon-blue transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-glass-dark border border-glass-medium rounded-xl hover:border-neon-blue transition-colors button-hover glare-hover"
             >
               {copied ? (
                 <>
@@ -144,7 +144,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
              {/* Subject */}
              <div className="bg-glass-dark border border-glass-medium rounded-xl p-4">
                <div className="flex items-center gap-2 mb-2">
-                 <span className="text-neon-blue font-semibold text-sm">Subject:</span>
+                 <span className="text-white font-semibold text-lg">Subject:</span>
                </div>
                <p className="text-white font-inter text-sm leading-relaxed">
                  {emailParts.subject}
@@ -154,7 +154,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
              {/* Body */}
              <div className="bg-glass-dark border border-glass-medium rounded-xl p-4 max-h-80 overflow-y-auto">
                <div className="flex items-center gap-2 mb-2">
-                 <span className="text-neon-purple font-semibold text-sm">Body:</span>
+                 <span className="text-white font-semibold text-lg">Body:</span>
                </div>
                <pre className="text-white font-inter text-sm leading-relaxed whitespace-pre-wrap">
                  {emailParts.body}
@@ -170,7 +170,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
         >
           <button
             onClick={handleCopy}
-            className="flex-1 bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink text-white font-bold py-4 px-8 rounded-2xl text-lg neon-glow transition-all duration-300 flex items-center justify-center gap-3"
+            className="flex-1 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white font-bold py-4 px-8 rounded-2xl text-lg neon-glow transition-all duration-300 flex items-center justify-center gap-3 button-hover glare-hover"
           >
             <Copy className="w-6 h-6" />
             Copy Email
@@ -178,9 +178,9 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
 
           <button
             onClick={onBack}
-            className="flex-1 bg-glass-light border border-glass-medium hover:bg-glass-medium text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all duration-300 flex items-center justify-center gap-3"
+            className="flex-1 bg-glass-light border border-glass-medium hover:bg-glass-medium text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all duration-300 flex items-center justify-center gap-3 button-hover glare-hover"
           >
-            <Sparkles className="w-6 h-6" />
+            <Sparkles className="w-6 h-6 text-white" />
             Generate Another
           </button>
         </motion.div>
@@ -197,22 +197,22 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
           className="glass-panel p-6"
           variants={itemVariants}
         >
-          <h3 className="text-lg font-semibold mb-4 text-neon-blue">Pro Tips for Better Results:</h3>
+          <h3 className="text-lg font-semibold mb-4 text-white">Pro Tips for Better Results:</h3>
           <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-neon-blue rounded-full mt-2 flex-shrink-0"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
               <p>Personalize the email with specific details about the recipient's company</p>
             </div>
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-neon-purple rounded-full mt-2 flex-shrink-0"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
               <p>Keep it under 150 words for better open rates</p>
             </div>
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-neon-pink rounded-full mt-2 flex-shrink-0"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
               <p>Follow up within 3-5 days if you don't get a response</p>
             </div>
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-neon-green rounded-full mt-2 flex-shrink-0"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
               <p>Test different subject lines to improve open rates</p>
             </div>
           </div>

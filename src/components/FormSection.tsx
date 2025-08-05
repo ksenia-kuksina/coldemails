@@ -257,7 +257,7 @@ const FormSection: React.FC<FormSectionProps> = ({
                viewBox="0 0 24 24"
                fill="currentColor"
                className="w-full h-full"
-               style={{ color: '#5511D3' }}
+               style={{ color: '#2D1B69' }}
              >
                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
              </svg>
@@ -267,8 +267,8 @@ const FormSection: React.FC<FormSectionProps> = ({
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.2),transparent_50%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(120,119,198,0.05)_25%,rgba(120,119,198,0.05)_50%,transparent_50%,transparent_75%,rgba(120,119,198,0.05)_75%)] bg-[length:20px_20px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,27,105,0.2),transparent_50%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(45,27,105,0.05)_25%,rgba(45,27,105,0.05)_50%,transparent_50%,transparent_75%,rgba(45,27,105,0.05)_75%)] bg-[length:20px_20px]"></div>
       </div>
 
       {/* Content */}
@@ -573,7 +573,7 @@ const FormSection: React.FC<FormSectionProps> = ({
                 {currentStep < STEPS.length ? (
                   <Button 
                     onClick={nextStep} 
-                    className="flex items-center gap-2 bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 hover:from-blue-500 hover:via-purple-500 hover:to-purple-700 text-white border-0"
+                    className="flex items-center gap-2 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white border-0 button-hover glare-hover"
                   >
                     Next
                     <ArrowRight className="w-4 h-4" />
@@ -582,7 +582,7 @@ const FormSection: React.FC<FormSectionProps> = ({
                   <Button
                     onClick={handleSubmit}
                     disabled={isLoading}
-                    className="flex items-center gap-2 min-w-[200px] bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 hover:from-blue-500 hover:via-purple-500 hover:to-purple-700 text-white border-0"
+                    className="flex items-center gap-2 min-w-[200px] bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white border-0 button-hover glare-hover"
                   >
                     {isLoading ? (
                       <>

@@ -15,12 +15,7 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '#contact' },
-  ];
+
 
   return (
     <motion.nav
@@ -41,35 +36,19 @@ const Navbar: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark rounded-lg flex items-center justify-center">
               <Mail className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
             </div>
-            <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-xl lg:text-2xl font-bold text-white">
               ColdEmail AI
             </span>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-white/80 hover:text-white transition-colors duration-200 font-medium relative group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-              </motion.a>
-            ))}
-          </div>
+
 
           {/* CTA Button */}
           <motion.button
-            className="hidden lg:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+            className="hidden lg:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 button-hover glare-hover"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, x: 20 }}
@@ -101,24 +80,8 @@ const Navbar: React.FC = () => {
           }`}
         >
           <div className="py-4 space-y-4 border-t border-white/10">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="block text-white/80 hover:text-white transition-colors duration-200 font-medium py-2"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ 
-                  opacity: isMobileMenuOpen ? 1 : 0, 
-                  x: isMobileMenuOpen ? 0 : -20 
-                }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </motion.a>
-            ))}
             <motion.button
-              className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+              className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 button-hover glare-hover"
               initial={{ opacity: 0, y: 20 }}
               animate={{ 
                 opacity: isMobileMenuOpen ? 1 : 0, 

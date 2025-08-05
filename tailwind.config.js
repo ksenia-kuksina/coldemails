@@ -16,6 +16,8 @@ module.exports = {
           purple: '#D400FF',
           pink: '#FF00E5',
           green: '#00FF88',
+          'blue-dark': '#21064e',
+          'purple-dark': '#5f11dc',
         },
         glass: {
           light: 'rgba(255, 255, 255, 0.1)',

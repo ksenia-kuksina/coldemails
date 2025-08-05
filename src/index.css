@@ -65,7 +65,7 @@
   }
   
   .neon-glow {
-    @apply shadow-[0_0_20px_rgba(0,240,255,0.5)] hover:shadow-[0_0_40px_rgba(0,240,255,0.8)] transition-all duration-300;
+    @apply shadow-[0_0_20px_rgba(45,27,105,0.5)] hover:shadow-[0_0_40px_rgba(45,27,105,0.8)] transition-all duration-300;
   }
   
   .floating-card {
@@ -74,6 +74,31 @@
   
   .gradient-text {
     @apply bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink bg-clip-text text-transparent;
+  }
+  
+  .button-hover {
+    @apply transform transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .glare-hover {
+    @apply relative overflow-hidden;
+  }
+  
+  .glare-hover::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full transition-transform duration-700;
+  }
+  
+  .glare-hover:hover::before {
+    @apply translate-x-full;
+  }
+  
+  .neon-text-glow {
+    text-shadow: 
+      0 0 5px rgba(240, 235, 255, 0.8),
+      0 0 10px rgba(240, 235, 255, 0.6),
+      0 0 15px rgba(240, 235, 255, 0.4),
+      0 0 20px rgba(240, 235, 255, 0.2);
   }
 }
 

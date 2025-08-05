@@ -68,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToForm }) => {
         >
           <button
             onClick={onScrollToForm}
-            className="group px-8 py-4 rounded-xl bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-white font-semibold transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
+            className="group px-8 py-4 rounded-xl bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white font-semibold transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl button-hover glare-hover"
           >
             Generate My Email
             <ArrowRight className="w-5 h-5" />
