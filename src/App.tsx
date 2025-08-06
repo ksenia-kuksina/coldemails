@@ -210,8 +210,8 @@ CRITICAL: Make every sentence count. Be specific, personal, and compelling. Use 
     setIsLoading(true);
     
     try {
-      // GitHub token hardcoded in the application
-      const token = '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';
+        // GitHub token hardcoded in the application
+  const token = 'YOUR_GITHUB_TOKEN_HERE';
       
       console.log('Using hardcoded GitHub token:', token.substring(0, 10) + '...');
       
@@ -486,6 +486,7 @@ The email must be so compelling that they feel they'll lose money by not respond
       <HistorySidebar 
         onReuseEmail={handleReuseEmail} 
         history={history}
+        onHistoryUpdate={() => setHistory(getEmailHistory())}
       />
 
       {/* Footer */}
@@ -499,7 +500,7 @@ The email must be so compelling that they feel they'll lose money by not respond
               </div>
               <div className="w-px h-4 bg-white/20"></div>
               <a 
-                href="https://www.linkedin.com/in/crusadersf/" 
+                href="https://www.linkedin.com/in/ksenia-kuksina-a71b94346/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-white/70 hover:text-white transition-colors duration-200"

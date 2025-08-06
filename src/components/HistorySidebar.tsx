@@ -20,9 +20,10 @@ import Toast from './Toast';
 interface HistorySidebarProps {
   onReuseEmail: (inputs: EmailHistoryEntry['inputs']) => void;
   history: EmailHistoryEntry[];
+  onHistoryUpdate?: () => void;
 }
 
-const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history }) => {
+const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history, onHistoryUpdate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [toastMessage, setToastMessage] = useState('');
@@ -45,10 +46,12 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history }
 
   const handleDelete = (id: number) => {
     deleteEmailFromHistory(id);
+    onHistoryUpdate?.();
   };
 
   const handleClearAll = () => {
     clearEmailHistory();
+    onHistoryUpdate?.();
   };
 
   const formatDate = (timestamp: number) => {
@@ -87,9 +90,9 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history }
         whileTap={{ scale: 0.95 }}
       >
         {isOpen ? (
-          <ChevronLeft className="w-6 h-6 text-neon-blue" />
+          <ChevronLeft className="w-6 h-6 text-white" />
         ) : (
-          <ChevronRight className="w-6 h-6 text-neon-blue" />
+          <ChevronRight className="w-6 h-6 text-white" />
         )}
       </motion.button>
 
@@ -145,7 +148,7 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history }
                         key={entry.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="glass-panel p-4 rounded-xl border border-glass-medium"
+                        className="history-card p-4"
                       >
                         {/* Header */}
                         <div className="flex items-center justify-between mb-3">
@@ -201,7 +204,7 @@ const HistorySidebar: React.FC<HistorySidebarProps> = ({ onReuseEmail, history }
                           </button>
                           <button
                             onClick={() => onReuseEmail(entry.inputs)}
-                            className="flex-1 py-2 px-3 bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink rounded-lg text-sm font-medium transition-all duration-300"
+                            className="flex-1 py-2 px-3 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark rounded-lg text-sm font-medium transition-all duration-300 button-hover glare-hover"
                           >
                             Reuse
                           </button>

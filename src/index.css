@@ -64,6 +64,10 @@
     @apply bg-glass-light backdrop-blur-md border border-glass-medium rounded-2xl;
   }
   
+  .history-card {
+    @apply bg-glass-medium backdrop-blur-md border border-glass-medium rounded-xl;
+  }
+  
   .neon-glow {
     @apply shadow-[0_0_20px_rgba(45,27,105,0.5)] hover:shadow-[0_0_40px_rgba(45,27,105,0.8)] transition-all duration-300;
   }
@@ -99,6 +103,11 @@
       0 0 10px rgba(240, 235, 255, 0.6),
       0 0 15px rgba(240, 235, 255, 0.4),
       0 0 20px rgba(240, 235, 255, 0.2);
+  }
+  
+  .section-blur-overlay {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 

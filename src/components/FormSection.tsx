@@ -271,8 +271,11 @@ const FormSection: React.FC<FormSectionProps> = ({
         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(45,27,105,0.05)_25%,rgba(45,27,105,0.05)_50%,transparent_50%,transparent_75%,rgba(45,27,105,0.05)_75%)] bg-[length:20px_20px]"></div>
       </div>
 
+      {/* Blur Gradient Overlay for smooth transition */}
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black via-black/80 via-black/40 to-transparent z-10 section-blur-overlay"></div>
+
       {/* Content */}
-      <div className="relative z-10 py-16 w-full">
+      <div className="relative z-20 py-16 w-full">
         <div className="w-full max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-12"
