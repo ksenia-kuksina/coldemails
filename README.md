@@ -2,6 +2,10 @@
 
 A stunning, futuristic web application that generates high-converting cold emails using AI. Built with React, TailwindCSS, and 3D visual effects.
 
+## ⚠️ Important Notice
+
+**To use this service, which utilizes the GPT-4.1 model, please visit the GitHub Marketplace, select the GPT-4.1 integration, and follow the instructions to generate your personal token.**
+
 ## ✨ Features
 
 - **AI-Powered Email Generation**: Generate personalized cold emails in seconds
