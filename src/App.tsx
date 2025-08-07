@@ -39,10 +39,39 @@ function App() {
     isNewToField: false
   });
   const [history, setHistory] = useState<EmailHistoryEntry[]>([]);
+  const [tokenStatus, setTokenStatus] = useState<'checking' | 'valid' | 'invalid' | 'error'>('checking');
 
   // Load history on mount
   useEffect(() => {
     setHistory(getEmailHistory());
+  }, []);
+
+  // Check token validity on mount
+  useEffect(() => {
+    const checkToken = async () => {
+      const token = process.env.REACT_APP_GITHUB_TOKEN || 'YOUR_GITHUB_TOKEN_HERE';
+      
+      try {
+        const response = await fetch('https://api.github.com/user', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+        
+        if (!response.ok) {
+          console.warn('GitHub token may be invalid or expired');
+          setTokenStatus('invalid');
+        } else {
+          console.log('GitHub token is valid');
+          setTokenStatus('valid');
+        }
+      } catch (error) {
+        console.warn('Could not verify GitHub token:', error);
+        setTokenStatus('error');
+      }
+    };
+    
+    checkToken();
   }, []);
 
   // Hyper-Personalized AI Prompt Engineering
@@ -443,6 +472,21 @@ The email must be so compelling that they feel they'll lose money by not respond
 
       {/* Navbar */}
       <Navbar />
+
+      {/* Token Status Alert */}
+      {tokenStatus === 'invalid' && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-red-500/90 backdrop-blur-md text-white px-6 py-3 rounded-lg shadow-lg border border-red-400/50">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">⚠️ GitHub token may be invalid. Please check your token in the README.</span>
+            <button 
+              onClick={() => setTokenStatus('valid')} 
+              className="text-white/70 hover:text-white transition-colors"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 min-h-screen w-full px-4 pt-20 lg:pt-24">
