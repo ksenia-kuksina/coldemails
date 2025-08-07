@@ -210,8 +210,8 @@ CRITICAL: Make every sentence count. Be specific, personal, and compelling. Use 
     setIsLoading(true);
     
     try {
-        // GitHub token hardcoded in the application
-  const token = 'YOUR_GITHUB_TOKEN_HERE';
+            // GitHub token from environment variable
+    const token = process.env.REACT_APP_GITHUB_TOKEN || 'YOUR_GITHUB_TOKEN_HERE';
       
       console.log('Using hardcoded GitHub token:', token.substring(0, 10) + '...');
       
