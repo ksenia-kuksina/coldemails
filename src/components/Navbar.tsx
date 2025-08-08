@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
 
 
 
-          {/* CTA Button */}
+        
           <motion.button
             onClick={() => document.getElementById('email-form')?.scrollIntoView({ behavior: 'smooth' })}
             className="hidden lg:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-neon-blue-dark to-neon-purple-dark hover:from-neon-purple-dark hover:to-neon-blue-dark text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 button-hover glare-hover"
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
+        
         <motion.div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
