@@ -31,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToForm }) => {
 
   return (
     <section className="h-screen flex items-center justify-center relative w-screen">
-      {/* Content */}
+    
       <motion.div 
         className="max-w-4xl text-center relative z-10 px-4 mx-auto -mt-40"
         variants={containerVariants}
