@@ -44,7 +44,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
 }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Hero Section */}
+      
       <HeroSection onScrollToForm={() => document.getElementById('email-form')?.scrollIntoView({ behavior: 'smooth' })} />
 
       {/* Form Section with its own background */}
