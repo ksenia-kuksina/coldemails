@@ -47,7 +47,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
       
       <HeroSection onScrollToForm={() => document.getElementById('email-form')?.scrollIntoView({ behavior: 'smooth' })} />
 
-      {/* Form Section with its own background */}
+      
       <FormSection 
         onGenerateEmail={onGenerateEmail}
         isLoading={isLoading}
