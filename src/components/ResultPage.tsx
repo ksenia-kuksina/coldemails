@@ -65,7 +65,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
         isVisible={isToastVisible}
         onClose={handleToastClose}
       />
-      {/* Header */}
+      
       <motion.div
         className="w-full max-w-4xl mb-8"
         variants={containerVariants}
