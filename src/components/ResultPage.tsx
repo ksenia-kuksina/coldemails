@@ -141,7 +141,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ email, onBack, onRegenerate }) 
           </div>
 
                      <div className="space-y-4">
-             {/* Subject */}
+            
              <div className="bg-glass-dark border border-glass-medium rounded-xl p-4">
                <div className="flex items-center gap-2 mb-2">
                  <span className="text-white font-semibold text-lg">Subject:</span>
